@@ -55,3 +55,106 @@ Quantity :
 
 
 the above code is not displaying the alert message
+
+
+here is the XML code:(Remember to change the variable names)-save it as customer.xml
+
+
+
+
+<?xml version="1.0"?>
+<Customer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation = "customer.xsd">
+    <Customerid id="101">
+           <NAME>Robert </NAME>
+           <PHONE_NUMBER>9876543125</PHONE_NUMBER>
+           <EMAIL_ID>robertd@gmail.com</EMAIL_ID>
+           <CITY>MUMBAI</CITY>
+     </Customerid>      
+            
+       <Customerid id="102">
+           <NAME>Saket Sharma </NAME>
+           <PHONE_NUMBER>9876543125</PHONE_NUMBER>
+           <EMAIL_ID>sakets@gmail.com</EMAIL_ID>
+           <CITY>pune</CITY>
+     </Customerid>      
+            
+            
+            
+     <Customerid id="103">
+           <NAME>Raksha </NAME>
+           <PHONE_NUMBER>9876543125</PHONE_NUMBER>
+           <EMAIL_ID>raksha@gmail.com</EMAIL_ID>
+           <CITY>MUMBAI</CITY>
+     </Customerid>      
+            
+            
+            
+     <Customerid id="104">
+           <NAME>Adarsh </NAME>
+           <PHONE_NUMBER>9876543125</PHONE_NUMBER>
+           <EMAIL_ID>adarsh@gmail.com</EMAIL_ID>
+           <CITY>MUMBAI</CITY>
+     </Customerid>      
+               
+               
+      <Customerid id="105">
+           <NAME>kayya </NAME>
+           <PHONE_NUMBER>9876543125</PHONE_NUMBER>
+           <EMAIL_ID>kavya@gmail.com</EMAIL_ID>
+           <CITY>pune</CITY>
+     </Customerid>      
+</Customer>                                    
+
+
+
+
+
+
+the xsd file for above xml is down below- name of file is customer.xsd(as before rename the variables)
+
+
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Customer" type="CustomerType"/>
+	  <xs:element name="Customerid" type="Customeridtype"/>
+	  <xs:element name="NAME" type="xs:string"/>
+	  <xs:element name="PHONE_NUMBER" type="phoneno"/>
+	  <xs:element name="EMAIL_ID" type="emailaddress"/>
+	  <xs:element name="CITY" type="xs:string"/>
+	  
+	  <xs:simpleType name="emailaddress"> 
+    <xs:restriction base="xs:string"> 
+      <xs:pattern value="[^@]+@[^\.]+\..+"/> 
+    </xs:restriction> 
+  </xs:simpleType> 
+	
+    
+    <xs:simpleType name="phoneno"> 
+    <xs:restriction base="xs:integer"> 
+      <xs:pattern value="[0-9]{10}"/>
+    </xs:restriction> 
+    </xs:simpleType>
+    
+    
+    <xs:complexType  name="CustomerType">
+		   <xs:sequence>
+		   <xs:element ref="Customerid" minOccurs="1" maxOccurs="unbounded"/>
+		   </xs:sequence>
+		  </xs:complexType> 
+		  
+		  
+     <xs:complexType  name="Customeridtype">
+	<xs:sequence>
+		  <xs:element ref="NAME" />
+	     <xs:element ref="PHONE_NUMBER" />
+	     <xs:element ref="EMAIL_ID" />
+	     <xs:element ref="CITY" />
+	  </xs:sequence>	  
+      <xs:attribute name= "id" type="xs:integer"/>
+    </xs:complexType>
+</xs:schema>		  
+		  
+		  
+		  
+      
+      
