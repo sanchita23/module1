@@ -4,3 +4,38 @@ it will be updated from time to time. so refresh the page after intervals.
 for those who are not contributors please comment and let us know if any changes are required.
 its requested to all to change the variables in your code as the codes are analysed & compared before submission.
 copy the codes at your own risk. none of the contributers are to be blamed later on & won't be held responsible.
+
+
+
+html
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>insert title here</title>
+</head>
+<body>
+<script src="validate1.js"></script>
+<form name="frm1" action="thanks.html" onsubmit="return validate()">
+enter  your name:
+<input type="text" name= "txtUname"/><br/>
+enter password:
+ <input type="password" name= "txtPass"/><br/>
+enter confirm Password: 
+<input type="Password" name="txtCpass"/><br/>
+select state:
+<select name="state">
+<option value="none">Select..</option>
+<option value="MH">Maharashtre</option>
+<option value="UP">uttar pradesh</option>
+<option value="GJ">Gujrat</option>
+</select>
+<select name="city">
+   <option value="none">Select..</option>
+
+</select>
+<input type="submit" value="go"/>
+</form>
+</body>
+</html>
