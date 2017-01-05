@@ -12,30 +12,49 @@ html
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>insert title here</title>
+<title> Online Shopping Mart</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<script src="validate1.js"></script>
-<form name="frm1" action="thanks.html" onsubmit="return validate()">
-enter  your name:
-<input type="text" name= "txtUname"/><br/>
-enter password:
- <input type="password" name= "txtPass"/><br/>
-enter confirm Password: 
-<input type="Password" name="txtCpass"/><br/>
-select state:
-<select name="state">
-<option value="none">Select..</option>
-<option value="MH">Maharashtre</option>
-<option value="UP">uttar pradesh</option>
-<option value="GJ">Gujrat</option>
-</select>
-<select name="city">
-   <option value="none">Select..</option>
+<form>
+<h1 style="text-align:center;"><i>Online Shopping Mart</i></h1>
+Customer Name :
+<input type="text" placeholder="Enter name here" required 
 
-</select>
-<input type="submit" value="go"/>
+required pattern="[A-Za-z]{3,}" title="min 3 letters in 
+
+the name"/>
+<br>
+<br/>
+Phone Number :
+<input type="text" required pattern="[0-9]{10}" 
+
+title="phone number should be of 6 10igits" required/>
+<br>
+<br/>
+Email id :
+<input id="email" name="email" type="email" required/>
+<br>
+<br/>
+Product Name :
+<input type="text"  required/>
+<br>
+<br/>
+Price:
+<input id="Price" name="Price" type="text" pattern = "[1-9]{1,5}" required />
+<br>
+<br/>
+Quantity :
+<input id="quantity" name="quantity" type="text" pattern = "[1-9]{1,5}" required />
+<br>
+<br/>
+<input type="submit" value="Submit">
 </form>
 </body>
 </html>
+
+
+
+
+
+
